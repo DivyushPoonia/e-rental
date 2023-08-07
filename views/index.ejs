@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+    <!--Nav Bar-->
+    <nav>
+        <div class="logo">E-RENTAL</div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a  class="active" href="/">Home</a></li>
+            <li><a  href="/category">Products</a></li>
+            <li><a href="/#aboutus">About</a></li>
+            <li><a href="/#aboutus">Contact</a></li>
+            <li>
+                <form action="/signout" method="post"> 
+                 <button id="signout-btn"> SIGN OUT </button> 
+               </form>
+           </li>
+        </ul>
+    </nav>
+    <header>
+        <div class="header-content">
+           
+            <h2>
+                RENT YOUR DESIRED DEVICES
+            </h2>
+            <div class="line"></div>
+                <h1>E-RENTAL</h1>
+            
+        </div>
+    </header>
+    <!-- Products-->
+    <section class="products">
+        <div class="title">
+            <h1>OUR CATEGORIES</h1>
+            <div class="line"></div>
+        </div>
+       <div class="elec-appl">
+           <div class="row">
+               <div class="col">
+                   <img src="images/devices.jpg" alt="">
+                   <h4>Electronic Devices</h4>
+                   <p>Devices such as Laptops,Digital Watches and gaming appliances are available for rent </p>
+                   <br>
+                   <a href="/electronics" class="ctn">Rent</a>
+                </div></div>
+                
+                <div class="row">
+                    <div class="col">
+                        <img src="images/appliances.jpg" alt="">
+                        <h4>Home Appliances</h4>
+                        <p>Different electric appliances available for rent at a affordable price </p>
+                        <br>
+                        <a href="/appliances" class="ctn">Rent</a>
+                    </div>
+                    
+                </div>
+        </div> 
+    </section>
+    <section class="explore">
+        <div class="explore-content">
+        <h1>EXPLORE </h1>
+        <div class="line"></div>
+        <p>Explore the world of electronic devices and appliances without even needing to own it</p><br>
+      
+        </div>
+    </section>
+    <section class="about" >
+        <div id="aboutus" class="row">
+            <div class="col content-col">
+                <h1>ABOUT US</h1>
+                <div class="line"></div>
+                <p>E-rental is a website from where people can rent electronic devices and appliances at affordable pricing</p>
+                <p>The aim of this site is to reduce the overuse of electronic products</p>
+            </div>
+            <div class="col image-col">
+                <div class="image-gallery">
+                    <img src="image/smartwatch.jpg">
+                    <img src="image/tv.jpg">
+                    <img src="image/PC.jpg">
+                    <img src="image/mac2.jpg">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="footer">
+        <p>Contact:-
+            E-rental@abc.com
+            call-100 222 333
+        </p>
+       
+    </section>
+    <script>
+        const menuBtn=document.querySelector('.menu-btn')
+        const navlinks=document.querySelector('.nav-links')
+
+        menuBtn.addEventListener('click',()=>{
+            navlinks.classList.toggle('mobile-menu')
+        })
+    </script>
+</body>
+</html>

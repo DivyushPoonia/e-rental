@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/product1.css">
+    <link rel="stylesheet" href="css/style.css">
+  <!--  <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
+</head>
+<body>
+    
+    <nav>
+        <div class="logo">E-RENTAL</div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a  href="/">HOME</a></li>
+            <li><a href="/category">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#about">Contact</a></li>
+            <li>
+                <form action="/signout" method="post"> 
+                 <button id="signout-btn">SIGN OUT </button> 
+               </form>
+           </li>
+        </ul>
+    </nav>
+    <div class = "products">
+        <div class = "container">
+            <h1 class = "lg-title">Laptops</h1>
+            <p class = "text-light">Laptops of leading brands listed below</p>
+
+            <div class = "product-items">
+                <% try{ if(products){  %>
+                <% for(let product of products){  %>
+                <%  if(product.product_type != "laptop") {continue;} %>
+                    
+                    
+                <!-- single  product Laptops -->
+                <div class="product">
+                    <div class="product-content">
+                        <div class="product-img">
+                            <img src="<%=product.imageurl%>"alt="product image">
+                        </div>
+                        <div class="product-btns">
+                            <form action="/rentnow" method="post" >
+                                <input type="text" name="product_name"  style="display:none" value="<%=product.title%>">
+                                <input type="text" name="product_imageurl"  style="display:none" value="<%=product.imageurl%>">
+                                <input type="text" name="product_price" style="display:none" value="<%=product.price%>">
+
+                                <button class="btn-buy"> rent now
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <div class="product-info-top">
+                            <h2 class="sm-title">Laptop</h2>
+
+                        </div>
+                        <a href="#" class="product-name"><%=product.title%></a>
+                        <p class="product-price"></p>
+                        <p class="product-price">Rs <%=product.price%>/mo</p>
+                    </div>
+
+                </div>
+
+               <% }}}catch(err){} %>                   
+               
+            </div>
+        </div>
+    </div>
+    <div class = "products">
+        <div class = "container">
+            <h1 class = "lg-title">Monitors</h1>
+            <p class = "text-light">Monitors of leading brands listed below</p>
+
+            <div class = "product-items">
+                <% try{ if(products){  %>
+                <% for(let product of products){  %>
+                <%  if(product.product_type != "monitor") {continue;} %>
+                   
+                <!-- single  product Laptops -->
+                <div class="product">
+                    <div class="product-content">
+                        <div class="product-img">
+                            <img src="<%=product.imageurl%>"alt="product image">
+                        </div>
+                        <div class="product-btns">
+                           
+                            <form action="/rentnow" method="post" >
+                                <input type="text" name="product_name"  style="display:none" value="<%=product.title%>">
+                                <input type="text" name="product_imageurl"  style="display:none" value="<%=product.imageurl%>">
+                                <input type="text" name="product_price" style="display:none" value="<%=product.price%>">
+
+                                <button class="btn-buy"> rent now
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <div class="product-info-top">
+                            <h2 class="sm-title">Monitor</h2>
+
+                        </div>
+                        <a href="#" class="product-name"><%=product.title%></a>
+                        <p class="product-price"></p>
+                        <p class="product-price">Rs <%=product.price%>/mo</p>
+                    </div>
+
+                </div>
+
+               <% }}}catch(err){} %>                   
+               
+            </div>
+        </div>
+    </div>
+
+    <div class = "products">
+        <div class = "container">
+            <h1 class = "lg-title">Phones</h1>
+            <p class = "text-light">Phones of leading brands listed below</p>
+
+            <div class = "product-items">
+                <% try{ if(products){  %>
+                <% for(let product of products){  %>
+                <%  if(product.product_type != "phone") {continue;} %>
+                   
+                    
+                <!-- single  product Laptops -->
+                <div class="product">
+                    <div class="product-content">
+                        <div class="product-img">
+                            <img src="<%=product.imageurl%>"alt="product image">
+                        </div>
+                        <div class="product-btns">
+                            <form action="/rentnow" method="post" >
+                                <input type="text" name="product_name"  style="display:none" value="<%=product.title%>">
+                                <input type="text" name="product_imageurl"  style="display:none" value="<%=product.imageurl%>">
+                                <input type="text" name="product_price" style="display:none" value="<%=product.price%>">
+
+                                <button class="btn-buy"> rent now
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <div class="product-info-top">
+                            <h2 class="sm-title">Phones</h2>
+
+                        </div>
+                        <a href="#" class="product-name"><%=product.title%></a>
+                        <p class="product-price"></p>
+                        <p class="product-price">Rs <%=product.price%>/mo</p>
+                    </div>
+
+                </div>
+
+               <% }}}catch(err){} %>                   
+               
+            </div>
+        </div>
+    </div>
+
+   
+    <section class="explore">
+        <div class="explore-content">
+        <h1>TABLETS </h1>
+        <div class="line"></div>
+        <p>Tablets from the leading brands are coming soon</p><br>
+        
+        </div>
+    </section>
+    <section class="about" id="about" >
+        <div class="row">
+            <div class="col content-col">
+                <h1>ABOUT US</h1>
+                <div class="line"></div>
+                <p>E-rental is a website from where people can rent electronic devices and appliances at affordable pricing</p>
+                <p>The aim of this site is to reduce the overuse of electronic products</p>
+            </div>
+            <div class="col image-col">
+                <div class="image-gallery">
+                    <img src="image/smartwatch.jpg">
+                    <img src="image/tv.jpg">
+                    <img src="image/PC.jpg">
+                    <img src="image/mac2.jpg">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="footer">
+        <p>Contact:-
+            divyushpoonia@gmail.com
+            call- 7062555558
+        </p>
+    </section>
+    
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</body>
+</html>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Appliances</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/appliances.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    
+    <nav>
+        <div class="logo">E-RENTAL</div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a  href="/">HOME</a></li>
+            <li><a href="/category">Products</a></li>
+            <li><a href="/#aboutus">About</a></li>
+            <li><a href="/#aboutus">Contact</a></li>
+            <li>
+                <form action="/signout" method="post"> 
+                 <button id="signout-btn"> SIGN OUT </button> 
+               </form>
+           </li>
+        </ul>
+    </nav>
+
+
+    <div class = "products">
+        <div class = "container">
+            <h1 class = "lg-title">Refrigerators</h1>
+            <p class = "text-light">Refrigerators of leading brands listed below</p>
+
+            <div class = "product-items">
+                <% try{ if(products){  %>
+                <% for(let product of products){  %>
+                <%  if(product.product_type != "Fridge") {continue;} %>
+                    
+                    
+                <!-- single  product Laptops -->
+                <div class="product">
+                    <div class="product-content">
+                        <div class="product-img" style="max-width:80px ;">
+                            <img src="<%=product.imageurl%>"alt="product image">
+                        </div>
+                        <div class="product-btns">
+                            <form action="/rentnow" method="post" >
+                                <input type="text" name="product_name"  style="display:none" value="<%=product.title%>">
+                                <input type="text" name="product_imageurl"  style="display:none" value="<%=product.imageurl%>">
+                                <input type="text" name="product_price" style="display:none" value="<%=product.price%>">
+
+                                <button class="btn-buy"> rent now
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <div class="product-info-top">
+                            <h2 class="sm-title">Refrigerator</h2>
+
+                        </div>
+                        <a href="#" class="product-name"><%=product.title%></a>
+                        <p class="product-price"></p>
+                        <p class="product-price">Rs <%=product.price%>/mo</p>
+                    </div>
+
+                </div>
+
+               <% }}}catch(err){} %>                   
+               
+            </div>
+        </div>
+    </div>
+                
+    <div class = "products">
+        <div class = "container">
+            <h1 class = "lg-title">Washing Machines</h1>
+            <p class = "text-light">Washing Machines of leading brands listed below</p>
+
+            <div class = "product-items">
+                <% try{ if(products){  %>
+                <% for(let product of products){  %>
+                <%  if(product.product_type != "washingmachine") {continue;} %>
+                  
+                    
+                <!-- single  product Laptops -->
+                <div class="product">
+                    <div class="product-content">
+                        <div class="product-img" style="max-width:120px ;" >
+                            <img src="<%=product.imageurl%>"   alt="product image">
+                        </div>
+                        <div class="product-btns">
+                            
+                            <form action="/rentnow" method="post" >
+                                <input type="text" name="product_name"  style="display:none" value="<%=product.title%>">
+                                <input type="text" name="product_imageurl"  style="display:none" value="<%=product.imageurl%>">
+                                <input type="text" name="product_price" style="display:none" value="<%=product.price%>">
+
+                                <button  class="btn-buy"> rent now
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <div class="product-info-top">
+                            <h2 class="sm-title">Washing Machine</h2>
+
+                        </div>
+                        <a href="#" class="product-name"><%=product.title%></a>
+                        <p class="product-price"></p>
+                        <p class="product-price">Rs <%=product.price%>/mo</p>
+                    </div>
+
+                </div>
+
+               <% }}}catch(err){} %>                   
+               
+            </div>
+        </div>
+    </div>
+
+    <div class = "products">
+        <div class = "container">
+            <h1 class = "lg-title">Air Conditioners</h1>
+            <p class = "text-light">Air Conditioners of leading brands listed below</p>
+
+            <div class = "product-items">
+                <% try{ if(products){  %>
+                <% for(let product of products){  %>
+                <%  if(product.product_type != "Ac") {continue;} %>
+                    
+                    
+                <!-- single  product Laptops -->
+                <div class="product">
+                    <div class="product-content">
+                        <div class="product-img">
+                            <img src="<%=product.imageurl%>" style="margin-top:2rem" alt="product image">
+                        </div>
+                        <div class="product-btns">
+                            
+                            <form action="/rentnow" method="post" >
+                                <input type="text" name="product_name"  style="display:none" value="<%=product.title%>">
+                                <input type="text" name="product_imageurl"  style="display:none" value="<%=product.imageurl%>">
+                                <input type="text" name="product_price" style="display:none" value="<%=product.price%>">
+
+                                <button class="btn-buy"> rent now
+                                    <span><i class="fas fa-shopping-cart"></i></span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <div class="product-info-top">
+                            <h2 class="sm-title">Air Conditioner</h2>
+
+                        </div>
+                        <a href="#" class="product-name"><%=product.title%></a>
+                        <p class="product-price"></p>
+                        <p class="product-price">Rs <%=product.price%>/mo</p>
+                    </div>
+
+                </div>
+
+               <% }}}catch(err){} %>                   
+               
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

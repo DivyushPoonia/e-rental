@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <script>
+        let list = document.querySelectorAll(".navigation li");
+
+        function activelink() {
+            list.forEach((item) => {
+                item.classList.remove("hovered");
+            });
+            this.classList.add("hovered");
+        }
+        list.forEach(item => item.addEventListener("mouseover", activelink));
+
+        //menu toggle
+        let toggle = document.querySelector(".toggle");
+        let navigation = document.querySelector(".navigation");
+        let main = document.querySelector(".main");
+
+        toggle.onclick = function () {
+            navigation.classList.toggle("active");
+            main.classList.toggle("active");
+        };
+    </script>
+</head>
+
+<body>
+    <!-- Navigation-->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+
+                        <span class="title">Admin Controls</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="/admin/admindashboard">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">  Dashboard  </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/admin/customers">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Customers</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/admin/addproduct">
+                        <span class="icon">
+                            <ion-icon name="add-outline"></ion-icon>
+                        </span>
+                        <span class="title">Add Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/deleteproduct">
+                        <span class="icon">
+                            <ion-icon name="remove-circle-outline"></ion-icon>
+                        </span>
+                        <span class="title">Delete Product</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/admin/orders">
+                        <span class="icon">
+                            <ion-icon name="bag-check-outline"></ion-icon>
+                        </span>
+                        <span  id="signout-btn" class="title">Orders</span>
+                    </a>
+                </li>
+
+
+
+
+                <li>
+                    <form action="/admin/signout" method="post">
+                        <a>
+                            <span class="icon">
+                                <ion-icon name="log-out-outline"></ion-icon>
+                            </span>
+                            <input type="submit" id="signout-btn" class="title" value="Sign Out"></input>
+                        </a>
+                       </form>
+                </li>
+
+            </ul>
+        </div>
+        <div class="main">
+            <div class="topbar">
+                
+               
+                
+            </div>
+            <div class="cardBox">
+                <h1 style="text-align:center; padding-bottom:-350px ;"> Customers</h1>
+            </div>
+
+            <div class="details" style="padding:0px; padding-left: 50px;">
+                <div class="recentOrders">
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <td> Name</td>
+                                <td> Email</td>
+                                <td> Contact Number</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% try{if(customers){ for (customer of customers){ %> 
+                                <tr>
+                                    <td> <%= customer.name %> </td>
+                                    <td> <%= customer.email %> </td>
+                                    <td> <%= customer.number %> </td> 
+                                </tr>
+                                <% }}}catch(err){} %> 
+ 
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            
+        </div>
+
+
+    </div>
+    </div>
+
+    </div>
+    <script src="admin.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

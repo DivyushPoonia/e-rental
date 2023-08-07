@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <script>
+        let list = document.querySelectorAll(".navigation li");
+
+        function activelink() {
+            list.forEach((item) => {
+                item.classList.remove("hovered");
+            });
+            this.classList.add("hovered");
+        }
+        list.forEach(item => item.addEventListener("mouseover", activelink));
+
+        //menu toggle
+        let toggle = document.querySelector(".toggle");
+        let navigation = document.querySelector(".navigation");
+        let main = document.querySelector(".main");
+
+        toggle.onclick = function () {
+            navigation.classList.toggle("active");
+            main.classList.toggle("active");
+        };
+    </script>
+</head>
+
+<body>
+    <!-- Navigation-->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="">
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+
+                        <span class="title">Admin Controls</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="/admin/admindashboard">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title"> Dashboard </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/admin/customers">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Customers</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/admin/deleteproduct">
+                        <span class="icon">
+                            <ion-icon name="add-outline"></ion-icon>
+                        </span>
+                        <span class="title">Add Products</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/admin/deleteproduct">
+                        <span class="icon">
+                            <ion-icon name="remove-circle-outline"></ion-icon>
+                        </span>
+                        <span class="title">Delete Product</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/admin/orders">
+                        <span class="icon">
+                            <ion-icon name="bag-check-outline"></ion-icon>
+                        </span>
+                        <span class="title">Orders</span>
+                    </a>
+                </li>
+
+
+
+
+                <li>
+                    <form action="/admin/signout" method="post">
+                        <a>
+                            <span class="icon">
+                                <ion-icon name="log-out-outline"></ion-icon>
+                            </span>
+                            <button id="signout-btn" class="title">Sign Out</button>
+                        </a>
+                       </form>
+                </li>
+
+            </ul>
+        </div>
+        <div class="main">
+            <div class="topbar">
+                
+
+
+            </div>
+            <div class="cardBox" style="display:flex ; justify-content :center; width:60%; ">
+                <h1 style="text-align:center; padding-bottom:-350px ;"> Add New Product </h1>
+            </div>
+
+            <div class="addProduct" style="margin-left:2rem ;">
+                <form action="/admin/addproduct" style="margin-top:2rem ;" method="post">
+                    <div class="input-ele">
+                        <label for="title"> Title </label>
+                        <input class="input" id="title" type="text" name="title" required>
+                    </div>
+
+                    <div class="input-ele">
+                        <label for="price"> Price </label>
+                        <input class="input" id="price" type="text" name="price" required>
+                    </div>
+
+                    <div class="input-ele">
+                        <label for="quantity"> Quantity </label>
+                        <input class="input" id="quantity" name="quantity" type="text" required>
+                    </div>
+
+                    <div class="input-ele">
+                        <label for="imageurl"> Image Url</label>
+                        <input class="input inputlast" id="imageurl" name="imageurl" type="text" required>
+                    </div>
+                    <div class="input-element">
+                        <p>Category</p>
+                        <input type="radio" id="electronics" name="category" value="electronics">
+                        <label for="electronics">Electronics</label><br>
+
+                        <input type="radio" id="appliances" name="category" value="appliances">
+                        <label for="appliances">Appliances</label><br>
+                    </div>
+                    <div class="input-element" style="margin-top:1rem; margin-bottom: 1.5rem;">
+                        <label for="product_type" >Product type:</label>
+                        <select name="product_type" id="product_type">
+                            <option value="laptop">Laptop</option>
+                            <option value="Ac">Ac</option>
+                            <option value="Fridge">Fridge</option>
+                            <option value="tv">Tv</option>
+                            <option value="smartwatch">Smartwatch</option>
+                            <option value="phone">Phone</option>
+                            <option value="washingmachine">Washing machine</option>
+                            <option value="camera">Camera</option>
+                            <option value="monitor">Monitor</option>
+                        </select>
+                    </div>
+
+                    <button class="addtocartbtn"> Add Product </button>
+
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+    </div>
+
+    </div>
+    <script src="admin.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/payment.css">
+    <link rel="stylesheet" href="css/nav.css">
+
+</head>
+
+<body>
+    <nav>
+        <div class="logo">E-RENTAL</div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/category">Products</a></li>
+            <li><a href="/#aboutus">About</a></li>
+            <li><a href="/#aboutus">Contact</a></li>
+
+        </ul>
+    </nav>
+
+
+    <div id="outer">
+        <div id="outer-1">
+
+            <div class="small-container cart-page">
+                <table>
+                    <input type="text" id="product_price" style="display:none;" value="<%=product_price%>">
+                    <tr>
+                        <th class="cart-th">Product Image</th>
+                        <th class="cart-th">Product Name</th>
+                        <th class="cart-th">Date from</th>
+                        <th class="cart-th">Months</th>
+                        <th class="cart-th">Total</th>
+
+                    </tr>
+
+                    <tr>
+                        <td style="max-width:200px ;">
+                            <div class="cart-info">
+                                <img  src="<%=product_imageurl%>" alt="Product Image">
+
+                            </div>
+
+                        </td>
+                        <td>
+                            <div>
+                                <p style="text-align: center;">
+                                    <%= product_name %>
+                                </p>
+                            </div>
+                        </td>
+                        <td class="cart-th1 table-inpt title"><input id="date-from" name="date" type="date" required min="2022-09-11" pattern="\D{2}-\d{2}-\D{4}"></td>
+
+                        <td class="cart-th1 table-inpt"><input id="months" name="months" type="number" value="1"></td>
+                        <td class="cart-th1 table-inpt"> <span id="totalPrice"> </span> </td>
+
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+   
+    <div style="display:flex; justify-content: center; align-items: center;">
+        <button id="total-price-btn" onclick="cal_total_price()">Calculate total Price</button>
+
+    </div>
+
+    <div class="container">
+
+        <form action="/book" method="post">
+
+            <div class="row">
+
+                <div class="col">
+
+                    <h3 class="title">billing address</h3>
+
+                    <div class="inputBox">
+                        <span>full name :</span>
+                        <input type="text" name="customer_name" placeholder="type your name" required>
+                    </div>
+                    <div class="inputBox">
+                        <span>email :</span>
+                        <input type="email" name="customer_email" placeholder="enter your email address" required>
+                    </div>
+                    <div class="inputBox">
+                        <span>contact no. :</span>
+                        <input type="tel" pattern="^\d{10}$" name="customer_number" placeholder="Enter your Number" required>
+                    </div>
+                    <div class="inputBox">
+                        <span>address :</span>
+                        <input type="text" name="customer_address" placeholder="Enter your address" required>
+                    </div>
+                    <div class="inputBox">
+                        <span>city :</span>
+                        <input type="text" name="city" placeholder="Enter the city" required>
+                    </div>
+
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>state :</span>
+                            <input type="text" name="state" placeholder="Enter the state" required> 
+                        </div>
+                        <div class="inputBox">
+                            <span>zip code :</span>
+                            <input type="text" name="pincode" placeholder="Enter Zipcode" required>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+            </div>
+            <input style="display:none ;" id="finalPrice" name="price" type="text">
+            <input style="display:none ;"  name="product_name" value="<%=product_name%>" type="text">
+            <input style="display:none ;" id="date" name="date" type="text">
+            <input style="display:none ;" id="month" name="month" type="text">
+
+            <button style="margin-left:-5px" class="submit-btn"> Proceed to checkout </button>
+
+        </form>
+
+    </div>
+
+    <script>
+        function cal_total_price() {
+            const months = document.querySelector('#months').value;
+            const month = document.querySelector('#month');
+            const product_price = document.querySelector('#product_price').value;
+            const totalPrice = document.querySelector('#totalPrice');
+            const finalPrice = document.querySelector('#finalPrice');
+            totalPrice.innerHTML = (months * product_price);
+            finalPrice.value = (months * product_price);
+
+            const date_from = document.querySelector('#date-from');
+            const date_new = document.querySelector('#date');
+            date_new.value=date_from.value;
+            month.value=months;
+        }
+    </script>
+
+</body>
+
+</html>

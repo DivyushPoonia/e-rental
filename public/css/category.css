@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+nav{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    background: black;
+    color: aliceblue;
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    font-size: 20px;
+}
+nav ul{
+    display: flex;
+    list-style:none;
+    justify-content: space-evenly;
+   
+}
+#nav1{
+    text-align: center;
+    width:30%;
+}
+#nav2{
+    width:50%;
+}
+#nav2 a{
+    color: white;
+    text-decoration: none;
+}
+.box{
+    display: flex;
+    
+}
+
+.first-container{
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    width: 60%;
+    height: 580px;
+    background-image: url("7.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: #0f0303;
+    border: 2px solid rgb(157, 152, 152);
+    border-radius: 10px;
+}
+
+.second-container{
+    margin-top: 1.5rem;
+    margin-left: 3rem;
+    margin-right: 1rem;
+    width: 30%;
+    border: 2px solid rgb(157, 152, 152);
+    background-color: rgb(155 155 155);
+    border-radius: 10px;
+}
+
+.signin-heading{
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.signin form{
+    display: flex;
+    flex-direction: column;
+    
+}
+.outer-home-container{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    width:100%;
+}
+
+.home-appliances{
+    border: 3px solid rgb(219 224 225);
+    border-radius: 8px;
+    margin-top: 3rem ;
+}
+.home-appliances:hover{
+    border: 3px solid rgb(127, 205, 221);
+}
+
+.home-appliances img{
+  width: 90%;
+  height: 200px;
+  padding-left:1rem ;
+  padding-right: 1.2rem;
+  padding-top: 1rem;
+   
+}
+
+.home-container{
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+   
+}
+
+.home-electronics{
+    /* background-image: url("electronic.png");
+    background-size: cover;
+    background-repeat: no-repeat; */
+    border: 3px solid rgb(219 224 225);
+    margin-top: 3rem ;
+    border-radius: 8px;
+}
+.home-electronics:hover{
+    border: 3px solid rgb(127, 205, 221);
+}
+
+
+.home-electronics img{
+    width: 90%;
+  height: 200px;
+  padding-left:1rem ;
+  padding-right: 1.2rem;
+  padding-top: 1rem;
+}
+
+.headings-home{
+    margin-top: 0.8rem;
+    text-align: center;
+    font-size: 1.5rem;
+    padding-bottom: 0.8rem;
+}

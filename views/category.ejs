@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <title> Home </title>
+</head>
+<body>
+    <!--Nav Bar-->
+    <nav>
+        <div class="logo">E-RENTAL</div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a  href="/">Home</a></li>
+            <li><a class="active"  href="/category">Products</a></li>
+            <li><a href="/#aboutus">About</a></li>
+            <li><a href="/#aboutus">Contact</a></li>
+            
+            <li>
+                 <form action="/signout" method="post"> 
+                  <button id="signout-btn">SIGN OUT </button> 
+                </form>
+            </li>
+        </ul>
+    </nav>
+   
+    <div class="title" style="margin-top:2rem; font-size:2.5vmin;">
+        <h1>OUR CATEGORIES</h1>
+        <div class="line"></div>
+    </div>
+      
+    <div class="outer-home-container">
+        
+         <a href="/appliances">
+           <div class="home-container">
+               <div class="home-appliances">
+                   <img src="image/appliance.png">
+                   <h3 class="headings-home">Appliances</h3>
+                </div>
+         </a>
+           
+         <a href="/electronics">
+             <div class="home-electronics">
+                 <img src="image/electronic.png">
+                 <h3 class="headings-home">Electronics</h3>
+                </div>    
+         </a>
+        </div>
+    </div>
+</body>
+</html>
